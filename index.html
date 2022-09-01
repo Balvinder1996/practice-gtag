@@ -12,15 +12,22 @@
   gtag('js', new Date());
 
   gtag('config', 'G-X6TK8235LP');
-  gtag('event','test-event',{
-    "value": "testingEvent"
-  })
+  function triggerEvent(id) {
+    var linkText = document.getElementById(id);
+    var linkHref = document.getElementById(id).href;
+    gtag('event','clickLink',{
+      "clickedLink": linkText,
+      "linkHref": linkHref
+    })
+  }
 </script>
 </head>
 <body>
   <h1>this</h1>
-  
-  <a href="#">link</a>
+  <a href="/" id="home" onclick="triggerEvent(id)">Home</a>
+  <a href="/" id="about" onclick="triggerEvent(id)">About</a>
+  <a href="/" id="contact" onclick="triggerEvent(id)">Contact</a>
+  <a href="/" id="product" onclick="triggerEvent(id)">Product</a>
 <!-- Google tag (gtag.js) -->
 <!-- Google tag (gtag.js) -->
 
